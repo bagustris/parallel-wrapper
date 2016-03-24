@@ -1,0 +1,132 @@
+This directory contains variants of the MD code
+that introduce replicated data MPI parallelization.
+
+ljmd-c.c:  baseline code
+ljmd-c0.c: code to be parallelized.
+ljmd-c1.c: parallelized version
+
+ljmd-f.f90:  baseline code
+ljmd-f0.f90: parallelized version
+ljmd-f1.f90: parallelized version
+
+bonus:
+ljmd-cc.c:   parallelized cell-list version of the code
+ljmd-fc.f90: parallelized cell-list version
+
+==========================================
+==========================================
+ljmd-c.x 108 atoms
+
+real	0m4.198s
+user	0m4.182s
+sys	0m0.005s
+==========================================
+ljmd-f.x 108 atoms
+
+real	0m6.582s
+user	0m6.562s
+sys	0m0.005s
+==========================================
+mpirun -np 4 ljmd-c0.x 108 atoms
+problem reading input: Inappropriate ioctl for device
+problem reading input: Inappropriate ioctl for device
+problem reading input: Inappropriate ioctl for device
+
+real	0m1.643s
+user	0m1.631s
+sys	0m0.014s
+==========================================
+mpirun -np 4 ljmd-c1.x 108 atoms
+
+real	0m1.598s
+user	0m2.287s
+sys	0m0.044s
+==========================================
+mpirun -np 4 ljmd-f0.x 108 atoms
+At line 259 of file ljmd-f0.f90 (unit = 5, file = 'stdin')
+Fortran runtime error: End of file
+At line 259 of file ljmd-f0.f90 (unit = 5, file = 'stdin')
+Fortran runtime error: End of file
+At line 259 of file ljmd-f0.f90 (unit = 5, file = 'stdin')
+Fortran runtime error: End of file
+
+real	0m2.620s
+user	0m2.578s
+sys	0m0.018s
+==========================================
+mpirun -np 4 ljmd-f1.x 108 atoms
+
+real	0m1.874s
+user	0m3.368s
+sys	0m0.050s
+==========================================
+mpirun -np 4 ljmd-cc.x 108 atoms
+
+real	0m1.723s
+user	0m2.776s
+sys	0m0.050s
+==========================================
+mpirun -np 4 ljmd-fc.x 108 atoms
+
+real	0m2.060s
+user	0m4.109s
+sys	0m0.047s
+==========================================
+==========================================
+ljmd-c.x 2916 atoms
+
+real	2m9.452s
+user	2m9.170s
+sys	0m0.012s
+==========================================
+ljmd-f.x 2916 atoms
+
+real	5m18.111s
+user	5m17.371s
+sys	0m0.081s
+==========================================
+mpirun -np 4 ljmd-c0.x 2916 atoms
+problem reading input: Inappropriate ioctl for device
+problem reading input: Inappropriate ioctl for device
+problem reading input: Inappropriate ioctl for device
+
+real	0m51.516s
+user	0m51.375s
+sys	0m0.024s
+==========================================
+mpirun -np 4 ljmd-c1.x 2916 atoms
+
+real	0m14.043s
+user	0m55.903s
+sys	0m0.055s
+==========================================
+mpirun -np 4 ljmd-f0.x 2916 atoms
+At line 259 of file ljmd-f0.f90 (unit = 5, file = 'stdin')
+Fortran runtime error: End of file
+At line 259 of file ljmd-f0.f90 (unit = 5, file = 'stdin')
+Fortran runtime error: End of file
+At line 259 of file ljmd-f0.f90 (unit = 5, file = 'stdin')
+Fortran runtime error: End of file
+
+real	1m30.688s
+user	1m30.304s
+sys	0m0.028s
+==========================================
+mpirun -np 4 ljmd-f1.x 2916 atoms
+
+real	0m24.872s
+user	1m39.011s
+sys	0m0.054s
+==========================================
+mpirun -np 4 ljmd-cc.x 2916 atoms
+
+real	0m4.733s
+user	0m14.773s
+sys	0m0.061s
+==========================================
+mpirun -np 4 ljmd-fc.x 2916 atoms
+
+real	0m9.047s
+user	0m31.897s
+sys	0m0.070s
+==========================================

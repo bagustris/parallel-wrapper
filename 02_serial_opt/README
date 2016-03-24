@@ -1,0 +1,115 @@
+This directory contains variants of the MD code
+that introduce various optimizations.
+
+ljmd-c.c:  baseline c code
+ljmd-c1.c: apply newton's 3rd law (F_ij = -F_ji)
+ljmd-c2.c: avoid using expensive math. pow(), sqrt(), divisions
+ljmd-c3.c: move invariant expressions outside of loops.
+
+ljmd-f.f90:  baseline fortran code
+ljmd-f1.f90: fortran version with all optimizations.
+
+bonus
+ljmd-cc.c:   using cell-lists to avoid O(N**2) scaling.
+ljmd-fc.f90: fortran version of the cell-list code
+
+==========================================
+==========================================
+ljmd-c.x 108 atoms
+
+real	0m4.184s
+user	0m4.172s
+sys	0m0.001s
+==========================================
+ljmd-c1.x 108 atoms
+
+real	0m2.287s
+user	0m2.278s
+sys	0m0.003s
+==========================================
+ljmd-c2.x 108 atoms
+
+real	0m1.735s
+user	0m1.727s
+sys	0m0.003s
+==========================================
+ljmd-c3.x 108 atoms
+
+real	0m1.668s
+user	0m1.661s
+sys	0m0.002s
+==========================================
+ljmd-f.x 108 atoms
+
+real	0m6.635s
+user	0m6.576s
+sys	0m0.005s
+==========================================
+ljmd-f1.x 108 atoms
+
+real	0m2.592s
+user	0m2.580s
+sys	0m0.003s
+==========================================
+ljmd-cc.x 108 atoms
+
+real	0m2.015s
+user	0m2.008s
+sys	0m0.002s
+==========================================
+ljmd-fc.x 108 atoms
+
+real	0m3.216s
+user	0m3.176s
+sys	0m0.006s
+==========================================
+==========================================
+ljmd-c.x 2916 atoms
+
+real	2m10.351s
+user	2m10.063s
+sys	0m0.014s
+==========================================
+ljmd-c1.x 2916 atoms
+
+real	1m2.198s
+user	1m1.970s
+sys	0m0.003s
+==========================================
+ljmd-c2.x 2916 atoms
+
+real	0m55.334s
+user	0m55.208s
+sys	0m0.006s
+==========================================
+ljmd-c3.x 2916 atoms
+
+real	0m49.887s
+user	0m49.772s
+sys	0m0.006s
+==========================================
+ljmd-f.x 2916 atoms
+
+real	5m21.762s
+user	5m21.077s
+sys	0m0.010s
+==========================================
+ljmd-f1.x 2916 atoms
+
+real	1m30.393s
+user	1m30.191s
+sys	0m0.011s
+==========================================
+ljmd-cc.x 2916 atoms
+
+real	0m12.125s
+user	0m12.091s
+sys	0m0.007s
+==========================================
+ljmd-fc.x 2916 atoms
+
+real	0m23.574s
+user	0m23.409s
+sys	0m0.012s
+==========================================
+

@@ -1,0 +1,1 @@
+Running in hybrid OpenMP/MPI parallel mode with 2 MPI tasks using 2 threads each

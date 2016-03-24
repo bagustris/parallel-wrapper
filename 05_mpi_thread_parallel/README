@@ -1,0 +1,68 @@
+This directory contains variants of the MD code
+that introduce hybrid OpenMP plus shared data MPI parallelization.
+Timings on dual Xeon 5150 @ 2.66GHz (core2 dual core)
+
+ljmd-c.c:    baseline code
+ljmd-c1.c: hybrid parallel optimized regular code with newton's 3rd law.
+ljmd_c2.c: hybrid parallel optimized cell-list code 
+
+ljmd-f.f90:    baseline code
+ljmd-f1.f90: hybrid parallel optimized regular code with newton's 3rd law.
+
+==========================================
+==========================================
+ljmd-c.x 108 atoms
+
+real	0m4.178s
+user	0m4.155s
+sys	0m0.001s
+==========================================
+ljmd-f.x 108 atoms
+
+real	0m6.843s
+user	0m6.744s
+sys	0m0.003s
+==========================================
+mpirun -x OMP_NUM_THREADS=2 -np 2 ljmd-c1.x 108 atoms
+
+real	0m0.632s
+user	0m2.395s
+sys	0m0.036s
+==========================================
+mpirun -x OMP_NUM_THREADS=2 -np 2 ljmd-f1.x 108 atoms
+
+real	0m1.878s
+user	0m3.371s
+sys	0m0.044s
+==========================================
+==========================================
+ljmd-c.x 2916 atoms
+
+real	2m13.268s
+user	2m12.959s
+sys	0m0.016s
+==========================================
+ljmd-f.x 2916 atoms
+
+real	5m19.627s
+user	5m18.896s
+sys	0m0.006s
+==========================================
+mpirun -x OMP_NUM_THREADS=2 -np 2 ljmd-c1.x 2916 atoms
+
+real	0m13.588s
+user	0m54.136s
+sys	0m0.034s
+==========================================
+mpirun -x OMP_NUM_THREADS=2 -np 2 ljmd-c2.x 2916 atoms
+
+real	0m4.540s
+user	0m14.006s
+sys	0m0.036s
+==========================================
+mpirun -x OMP_NUM_THREADS=2 -np 2 ljmd-f1.x 2916 atoms
+
+real	0m23.937s
+user	1m35.054s
+sys	0m0.048s
+==========================================

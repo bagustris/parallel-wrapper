@@ -1,0 +1,31 @@
+This version is a simple naive implementation
+of a single atom type lennard jones fluid MD code
+using the velocity verlet algorithm.
+
+The makefile contains rules to run benchmarks and
+compare to LAMMPS as well as a profiling run.
+
+Reference timings with gcc/gfortran 4.3.2 on
+an Intel Core2 Duo CPU U9400@1.40GHz processor.
+
+==========================================
+ljmd-c.x 108 atoms
+real	0m12.121s user	0m11.980s sys	0m0.046s
+==========================================
+ljmd-f.x 108 atoms
+real	0m13.670s user	0m13.626s sys	0m0.033s
+==========================================
+lammps 108 atoms
+real	0m4.688s user	0m3.546s sys	0m0.134s
+==========================================
+
+==========================================
+ljmd-c.x 2916 atoms 
+real	5m36.584s user	5m35.564s sys	0m0.551s
+==========================================
+ljmd-f.x 2916 atoms
+real	9m26.087s user	9m24.582s sys	0m0.977s
+==========================================
+lammps 2916 atoms
+real	0m23.627s user	0m23.430s sys	0m0.124s
+==========================================

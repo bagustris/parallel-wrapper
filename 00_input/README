@@ -1,0 +1,5 @@
+
+The argon_* files are input and restart files for the ljmd code.
+
+The in.lj_* and data.lj_* files are reference inputs for LAMMPS.
+

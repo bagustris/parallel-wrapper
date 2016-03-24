@@ -1,0 +1,136 @@
+This directory contains variants of the MD code
+that introduce shared memory OpenMP parallelization.
+
+ljmd-c.c:  baseline code
+ljmd-c0.c: code to be parallelized, w/o newton's 3rd law.
+ljmd-c1.c: parallelized version, w/o newton's 3rd law.
+ljmd-c2.c: parallelized version, w/ newton's 3rd law and "omp critical"
+ljmd-c3.c: parallelized version, w/ newton's 3rd law and "omp atomic"
+ljmd-c4.c: parallelized version, w/ newton's 3rd law and extra memory + reduction.
+
+ljmd-f.f90:  baseline code
+ljmd-f0.f90: code to be parallelized version, w/o newton's 3rd law.
+ljmd-f1.f90: parallelized version, w/o newton's 3rd law.
+ljmd-f2.f90: parallelized version, w/ newton's 3rd law and "omp critical"
+ljmd-f3.f90: parallelized version, w/ newton's 3rd law and "omp atomic"
+ljmd-f4.f90: parallelized version, w/ newton's 3rd law and extra memory + reduction.
+
+bonus:
+ljmd-cc.c:   parallelized cell-list version of the code
+ljmd-fc.f90: parallelized cell-list version
+
+==========================================
+==========================================
+ljmd-c.x 108 atoms
+4.15user 0.00system 0:04.17elapsed 99%CPU (0avgtext+0avgdata 3120maxresident)k
+0inputs+1464outputs (0major+237minor)pagefaults 0swaps
+==========================================
+ljmd-c0.x 108 atoms
+3.20user 0.00system 0:02.95elapsed 108%CPU (0avgtext+0avgdata 3264maxresident)k
+0inputs+1464outputs (0major+249minor)pagefaults 0swaps
+==========================================
+ljmd-c1.x 108 atoms
+3.58user 0.00system 0:00.90elapsed 398%CPU (0avgtext+0avgdata 3280maxresident)k
+0inputs+1464outputs (0major+250minor)pagefaults 0swaps
+==========================================
+ljmd-c2.x 108 atoms
+28.84user 4.33system 0:08.32elapsed 398%CPU (0avgtext+0avgdata 3280maxresident)k
+0inputs+1464outputs (0major+248minor)pagefaults 0swaps
+==========================================
+ljmd-c3.x 108 atoms
+12.42user 0.00system 0:03.11elapsed 398%CPU (0avgtext+0avgdata 3280maxresident)k
+0inputs+1464outputs (0major+250minor)pagefaults 0swaps
+==========================================
+ljmd-c4.x 108 atoms
+2.31user 0.01system 0:00.58elapsed 398%CPU (0avgtext+0avgdata 3504maxresident)k
+0inputs+1464outputs (0major+279minor)pagefaults 0swaps
+==========================================
+ljmd-f.x 108 atoms
+6.52user 0.00system 0:06.56elapsed 99%CPU (0avgtext+0avgdata 4064maxresident)k
+0inputs+1448outputs (0major+295minor)pagefaults 0swaps
+==========================================
+ljmd-f0.x 108 atoms
+6.78user 0.00system 0:01.70elapsed 398%CPU (0avgtext+0avgdata 4256maxresident)k
+0inputs+1448outputs (0major+310minor)pagefaults 0swaps
+==========================================
+ljmd-f1.x 108 atoms
+6.82user 0.01system 0:01.72elapsed 396%CPU (0avgtext+0avgdata 4256maxresident)k
+0inputs+1448outputs (0major+308minor)pagefaults 0swaps
+==========================================
+ljmd-f2.x 108 atoms
+28.71user 4.13system 0:08.23elapsed 398%CPU (0avgtext+0avgdata 4256maxresident)k
+0inputs+1464outputs (0major+310minor)pagefaults 0swaps
+==========================================
+ljmd-f3.x 108 atoms
+13.20user 0.00system 0:03.31elapsed 398%CPU (0avgtext+0avgdata 4256maxresident)k
+0inputs+1456outputs (0major+310minor)pagefaults 0swaps
+==========================================
+ljmd-f4.x 108 atoms
+8.58user 0.00system 0:02.15elapsed 398%CPU (0avgtext+0avgdata 4288maxresident)k
+0inputs+1448outputs (0major+312minor)pagefaults 0swaps
+==========================================
+ljmd-cc.x 108 atoms
+3.26user 0.00system 0:00.82elapsed 398%CPU (0avgtext+0avgdata 3600maxresident)k
+0inputs+1464outputs (0major+289minor)pagefaults 0swaps
+==========================================
+ljmd-fc.x 108 atoms
+7.27user 0.01system 0:01.82elapsed 398%CPU (0avgtext+0avgdata 4384maxresident)k
+0inputs+1448outputs (0major+318minor)pagefaults 0swaps
+==========================================
+==========================================
+ljmd-c.x 2916 atoms
+128.66user 0.01system 2:08.98elapsed 99%CPU (0avgtext+0avgdata 3920maxresident)k
+0inputs+8024outputs (0major+287minor)pagefaults 0swaps
+==========================================
+ljmd-c0.x 2916 atoms
+103.34user 0.00system 1:43.31elapsed 100%CPU (0avgtext+0avgdata 4080maxresident)k
+0inputs+8024outputs (0major+300minor)pagefaults 0swaps
+==========================================
+ljmd-c1.x 2916 atoms
+119.64user 0.01system 0:30.00elapsed 398%CPU (0avgtext+0avgdata 4080maxresident)k
+0inputs+8024outputs (0major+300minor)pagefaults 0swaps
+==========================================
+ljmd-c2.x 2916 atoms
+129.11user 9.10system 0:34.63elapsed 399%CPU (0avgtext+0avgdata 4080maxresident)k
+0inputs+8024outputs (0major+300minor)pagefaults 0swaps
+==========================================
+ljmd-c3.x 2916 atoms
+115.00user 0.02system 0:28.82elapsed 399%CPU (0avgtext+0avgdata 4080maxresident)k
+0inputs+8024outputs (0major+299minor)pagefaults 0swaps
+==========================================
+ljmd-c4.x 2916 atoms
+61.14user 0.00system 0:15.32elapsed 399%CPU (0avgtext+0avgdata 5104maxresident)k
+0inputs+8024outputs (0major+373minor)pagefaults 0swaps
+==========================================
+ljmd-f.x 2916 atoms
+315.46user 0.03system 5:16.44elapsed 99%CPU (0avgtext+0avgdata 4816maxresident)k
+0inputs+8080outputs (0major+344minor)pagefaults 0swaps
+==========================================
+ljmd-f0.x 2916 atoms
+199.74user 0.02system 0:50.10elapsed 398%CPU (0avgtext+0avgdata 5296maxresident)k
+0inputs+8032outputs (0major+373minor)pagefaults 0swaps
+==========================================
+ljmd-f1.x 2916 atoms
+203.01user 0.03system 0:51.33elapsed 395%CPU (0avgtext+0avgdata 5296maxresident)k
+0inputs+8032outputs (0major+373minor)pagefaults 0swaps
+==========================================
+ljmd-f2.x 2916 atoms
+192.18user 6.04system 0:49.67elapsed 399%CPU (0avgtext+0avgdata 5296maxresident)k
+0inputs+8040outputs (0major+375minor)pagefaults 0swaps
+==========================================
+ljmd-f3.x 2916 atoms
+183.13user 0.03system 0:45.97elapsed 398%CPU (0avgtext+0avgdata 5296maxresident)k
+0inputs+8032outputs (0major+375minor)pagefaults 0swaps
+==========================================
+ljmd-f4.x 2916 atoms
+111.73user 0.02system 0:28.01elapsed 398%CPU (0avgtext+0avgdata 6112maxresident)k
+0inputs+8024outputs (0major+427minor)pagefaults 0swaps
+==========================================
+ljmd-cc.x 2916 atoms
+17.35user 0.02system 0:04.36elapsed 398%CPU (0avgtext+0avgdata 6272maxresident)k
+0inputs+8024outputs (0major+446minor)pagefaults 0swaps
+==========================================
+ljmd-fc.x 2916 atoms
+33.72user 0.02system 0:08.46elapsed 398%CPU (0avgtext+0avgdata 7232maxresident)k
+0inputs+8008outputs (0major+496minor)pagefaults 0swaps
+==========================================
