@@ -1,7 +1,7 @@
 Parallel-wrapper
 ================
 
-Based on ICTP Scietific Computing Course 2016
+Based on ICTP Scientific Computing Course 2016
 
 Lecture is given by Ivan Girotto
 
